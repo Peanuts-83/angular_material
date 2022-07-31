@@ -28,7 +28,7 @@ Import JS name: MatButtoModule (prefix: Mat, suffix: Module)
 Use HTML name: mat-button / mat-raised-button / etc...
 <br><br>
 
-MATERIAL is used to set all used material modules to imports/exports.
+shared/modules/material.module.ts is used to set all used material modules to imports/exports. You import it in app.module.ts.
 
 ```javascript
 import {NgModule} from '@angular/core';
