@@ -2,16 +2,23 @@
 
 ref: [https://material.angular.io/](https://material.angular.io/)
 
-
-## Install
+# Setup this demo project
 
 ```bash
-ng new material   // angular project
-cd material
+git clone <repo>
+npm i
+ng serve // watch on localhost:4200
+```
+
+## Setup a new project
+
+```bash
+ng new <projectName>   // angular project
+cd <projectName>
 ng add @angular/material   // add material lib >> choose theme & allow animations
 ```
 
-Add material in app.module.ts and cd shared/modules/
+Add material in app.module.ts and cd in shared/modules/, then create a new module dedicated to material design.
 
 ```bash
 ng g m material
