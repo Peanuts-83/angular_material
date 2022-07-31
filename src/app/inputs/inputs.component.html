@@ -1,0 +1,36 @@
+<div class="title">Input, Checkbox, Radio & Slide toggle</div>
+<div [formGroup]="form" class="row">
+  <div class="inputs col">
+    <mat-form-field hintLabel="Max 20 characters">
+      <input matInput placeholder="enabled" formControlName="input" [matAutocomplete]="auto">
+      <mat-autocomplete #auto>
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="type='number'" type="number" formControlName="input2">
+      <mat-icon matPrefix style="margin-right: 10px;">€</mat-icon>
+      <mat-hint align="end">mat-hint align=end</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="type='email'" type="email" formControlName="input3">
+      <mat-error *ngIf="form.invalid">Email is not valid</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="disabled='true'" disabled="true">
+    </mat-form-field>
+  </div>
+  <div class="inputs col" style="align-items: end;">
+    <mat-checkbox labelPosition="before" formControlName="checkbox">Human</mat-checkbox>
+    <br><br>
+    <mat-radio-group formControlName="radio">
+      <mat-radio-button labelPosition="after" value="male">male</mat-radio-button><br>
+      <mat-radio-button labelPosition="after" value="female">female</mat-radio-button>
+    </mat-radio-group>
+    <mat-slide-toggle color="secondary" formControlName="toggle">accept</mat-slide-toggle>
+    <mat-error *ngIf="form.invalid">Required</mat-error>
+  </div>
+</div>
+<pre>{{ form.value | json }}</pre>

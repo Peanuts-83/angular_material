@@ -1,0 +1,24 @@
+<div class="title">Select, Slider & Date</div>
+<div [formGroup]="form" class="row">
+  <div class="inputs col">
+    <mat-form-field class="module row">
+      <mat-select placeholder="Choose a totem" [(value)]="selectedAnimal" formControlName="select">
+        <mat-option *ngFor="let animal of animals" [value]=animal>{{ animal }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div class="module col" style="width: 85%;">
+      <mat-slider min="0" max="50" step="5" thumbLabel="true" formControlName="slider" style="width: 100%; margin-bottom: -10px;"></mat-slider>
+      <label
+      >Quantity</label>
+    </div>
+    <div class="module row">
+      <mat-form-field>
+        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date" formControlName="date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+</div>
+<div style="width: 50%; transform: scale(300%);position: relative; left: 200px;">{{ icons[selectedAnimal] }}</div>
+<pre>{{ form.value | json }}</pre>

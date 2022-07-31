@@ -1,0 +1,38 @@
+<mat-sidenav-container style="width: 100%; padding: 10px;">
+  <mat-sidenav-content>
+    <div class="title">Buttons, menu, sidenav</div>
+    <div class="col">
+      <div class="module row">
+        <span class="buttons row" style="width: 100%;">
+          <button mat-button color="primary" title="base primary">Click me!</button>
+          <button mat-raised-button color="basic" title="raised basic">Click me!</button>
+          <button mat-flat-button color="accent" title="flat accent">Click me!</button>
+          <button mat-icon-button color="warn" title="icon warn">Click</button>
+          <button mat-mini-fab color="warn" title="mini-fab warn">Click</button>
+          <button mat-stroked-button color="warn" title="stroked warn">Click me!</button>
+          <div class="menu">
+            <button [matMenuTriggerFor]="menu" mat-raised-button color="primary">Menu button</button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item style="width: 100%;" [matMenuTriggerFor]="subMenu">
+                <mat-icon> dialpad </mat-icon> aaa
+              </button>
+              <button mat-menu-item style="width: 100%;">
+                <mat-icon> settings </mat-icon> bbb
+              </button>
+              <button mat-menu-item style="width: 100%;">
+                <mat-icon> favorite </mat-icon> ccc
+              </button>
+            </mat-menu>
+            <mat-menu #subMenu="matMenu">
+              <button mat-menu-item style="width: 100%;">ddd</button>
+              <button mat-menu-item style="width: 100%;">eee</button>
+            </mat-menu>
+          </div>
+        </span>
+      </div>
+      <div class="module row">
+      </div>
+    </div>
+  </mat-sidenav-content>
+  <mat-sidenav mode="over" position="end" [opened]="openNav" #nav>The sidenav</mat-sidenav>
+</mat-sidenav-container>
