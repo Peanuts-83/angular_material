@@ -2,7 +2,7 @@
 
 ref: [https://material.angular.io/](https://material.angular.io/)
 
-# Setup this demo project
+## Setup this demo project
 
 ```bash
 git clone <repo>
