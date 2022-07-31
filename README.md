@@ -40,7 +40,7 @@ const MATERIALS = [MatButtonModule]
   imports: MATERIALS,
   exports: MATERIALS,
 })
-checkexport class MaterialModule {}
+export class MaterialModule {}
 ```
 
 In this example, Button module is used and can be set in HTML like so:
